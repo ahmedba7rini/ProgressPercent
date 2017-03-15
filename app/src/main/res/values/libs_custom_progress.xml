@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <attr name="direction" format="integer">
+        <flag name="ltr" value="0" />
+        <flag name="rtl" value="1" />
+    </attr>
+
+    <declare-styleable name="ProgressView">
+        <attr name="direction"/>
+        <attr name="strokeColor" format="color"/>
+        <attr name="progressColor" format="color"/>
+        <attr name="backgroundColor" format="color"/>
+        <attr name="progress" format="float"/>
+        <attr name="max" format="integer"/>
+        <attr name="textSize" format="dimension"/>
+        <attr name="textPadding" format="dimension"/>
+        <attr name="textFont" format="string"/>
+        <attr name="radius" format="dimension"/>
+    </declare-styleable>
+</resources>
