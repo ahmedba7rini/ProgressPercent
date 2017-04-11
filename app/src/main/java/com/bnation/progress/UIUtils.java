@@ -9,12 +9,12 @@ import android.widget.ProgressBar;
 
 public class UIUtils {
 
-    public static void animateProgress(View progressBar, float from, float to, float max, int color){
+    public static void animateProgress(View progressBar, float from, float to, float max, int progressColor){
         if(progressBar instanceof ProgressBar) {
             ((ProgressBar)progressBar).setMax((int) max);
         } else if(progressBar instanceof ProgressView) {
             ((ProgressView)progressBar).setProgressMax(max);
-            ((ProgressView)progressBar).setProgressColor(color);
+            ((ProgressView)progressBar).setProgressColor(progressColor);
         }
 
         ProgressBarAnimation animation = new ProgressBarAnimation(progressBar,from,to);
