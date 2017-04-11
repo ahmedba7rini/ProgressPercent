@@ -1,12 +1,13 @@
 <resources>
-    <string name="app_name">Progress</string>
+    <string name="app_name">ProgressPercent</string>
     <string name="progressTitleRTL">RTL Progress</string>
     <string name="progressTitleLTR">LTR Progress</string>
 
     <!--available fonts in assets-->
     <!--to use more font you had to add them into assets folder, then just write the name of the font to app:textFont-->
-    <string name="montague">montague.ttf</string>
-    <string name="orange_juice_2">orange_juice_2.ttf</string>
+    <string name="april_flowers">april_flowers.ttf</string>
+    <string name="hantu_kom_kom">hantu_kom_kom.ttf</string>
+    <string name="sorry_sorry">sorry_sorry.ttf</string>
 
     <!--Note: fonts are downloaded from http://www.1001freefonts.com -->
 
