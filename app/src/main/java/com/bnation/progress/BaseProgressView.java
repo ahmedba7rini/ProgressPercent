@@ -16,13 +16,19 @@ import android.util.DisplayMetrics;
 import android.view.View;
 
 /**
- * Works with any background
  * <p>
- * Heavily inspired from Romain Guy's Medium article on "How to underline text":
- * https://medium.com/google-developers/a-better-underline-for-android-90ba3a2e4fb#.hnv0zcm2h
+ * Thanks to :
+ * (Rakshak R.Hegde) "https://github.com/rakshakhegde"
+ * </p>
+ *
  * <p>
- * Created by rakshakhegde on 16/02/17.
+ * Heavily inspired by :
+ * https://github.com/rakshakhegde/Diffre
+ * <p>
+ *
+ * Created by ahmed.bah7ini on Mar 15, 2017.
  */
+
 public abstract class BaseProgressView extends View {
 
 	protected int mProgressDirection = LAYOUT_DIRECTION_RTL;
@@ -115,7 +121,7 @@ public abstract class BaseProgressView extends View {
 		}
 	}
 
-	public static Path getRoundRectPath(float left, float top, float right, float bottom, float radius) {
+	protected static Path getRoundRectPath(float left, float top, float right, float bottom, float radius) {
 		Path roundRectPath = new Path();
 		rectF.set(left, top, right, bottom);
 		roundRectPath.addRoundRect(rectF, radius, radius, Path.Direction.CW);
@@ -165,7 +171,6 @@ public abstract class BaseProgressView extends View {
 	}
 
 	private int cx = 0;
-
 	private void initProgressPaint(final float _progress){
 		assert _progress >= 0F && _progress <= mProgressMax;
 
@@ -227,9 +232,9 @@ public abstract class BaseProgressView extends View {
 		computeCroppedTextPath();
 	}
 
-	public abstract void computeCroppedProgressPath();
+	protected abstract void computeCroppedProgressPath();
 
-	public abstract void computeCroppedTextPath();
+	protected abstract void computeCroppedTextPath();
 
 	@Override
 	protected void onDraw(Canvas canvas) {
@@ -260,7 +265,8 @@ public abstract class BaseProgressView extends View {
 	 * @param color
      */
 	public void setProgressColor(int color) {
-		this.mProgressColor = getResources().getColor(color);
+		this.mProgressColor = color;
+		invalidate();
 	}
 
 	/**
@@ -268,7 +274,8 @@ public abstract class BaseProgressView extends View {
 	 * @param color
      */
 	public void setProgressBackgroundColor(int color) {
-		this.mProgressBackgroundColor = getResources().getColor(color);
+		this.mProgressBackgroundColor = color;
+		invalidate();
 	}
 
 	/**
@@ -276,7 +283,8 @@ public abstract class BaseProgressView extends View {
 	 * @param color
      */
 	public void setProgressStrokeColor(int color) {
-		this.mProgressStrokeColor = getResources().getColor(color);
+		this.mProgressStrokeColor = color;
+		invalidate();
 	}
 
 	/**
@@ -286,6 +294,7 @@ public abstract class BaseProgressView extends View {
      */
 	public void setProgressDirection(int direction){
 		mProgressDirection = direction;
+		setProgress(getProgress());
 	}
 
 	/**
@@ -294,10 +303,36 @@ public abstract class BaseProgressView extends View {
      */
 	public void setProgressMax(float progressMax){
 		mProgressMax = progressMax;
+		invalidate();
 	}
 
 	public float getProgressMax() {
 		return mProgressMax;
+	}
+
+	/**
+	 * set font name as is in Assets, Font should be pre-loaded to Assets Folder.
+	 * @param textFontNameInAssetsRes
+	 */
+	public void setProgressFont(int textFontNameInAssetsRes){
+		setProgressFont(getContext().getString(textFontNameInAssetsRes));
+	}
+	/**
+	 * set font name as is in Assets, Font should be pre-loaded to Assets Folder.
+	 * @param textFontNameInAssets
+	 */
+	public void setProgressFont(String textFontNameInAssets){
+		try {
+			Typeface tf = Typeface.createFromAsset(getContext().getAssets(),textFontNameInAssets);
+			if(!TextUtils.isEmpty(textFontNameInAssets) && tf != null){
+				paint.setTypeface(tf);
+			}
+			requestLayout();
+			setProgress(getProgress());
+		} catch (Exception e){
+					/*do nothing, just ignore font*/
+		}
+
 	}
 
 	private int dpToPx(int dp) {

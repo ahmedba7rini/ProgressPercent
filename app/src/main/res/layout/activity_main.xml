@@ -1,26 +1,30 @@
 <?xml version="1.0" encoding="utf-8"?>
-<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    tools:context=".MainActivity">
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+                xmlns:app="http://schemas.android.com/apk/res-auto"
+                xmlns:tools="http://schemas.android.com/tools"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:padding="5dp"
+                tools:context=".MainActivity">
 
     <LinearLayout
+        android:id="@+id/progressLyt"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
         android:layout_gravity="center"
-        android:orientation="vertical">
+        android:orientation="vertical"
+        android:padding="5dp">
 
         <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:gravity="center"
             android:text="@string/progressTitleRTL"
-            android:textAppearance="@style/TextAppearance.AppCompat.Medium" />
+            android:textAppearance="@style/TextAppearance.AppCompat.Medium"/>
 
         <com.bnation.progress.ProgressView
-            android:id="@+id/fillShapeViewApi1"
+            android:id="@+id/progressView"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_gravity="center"
@@ -33,26 +37,122 @@
             app:progressColor="@color/result_red"
             app:radius="10dp"
             app:strokeColor="@color/result_blue"
+            app:textFont="@string/font_april_flowers"
             app:textPadding="10dp"
-            app:textFont="@string/montague"
-            app:textSize="15sp" />
+            app:textSize="30sp"/>
     </LinearLayout>
 
-    <Button
-        android:id="@+id/progressBtn"
+    <LinearLayout
+        android:id="@+id/controls_lyt"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_gravity="bottom"
-        android:text="Animate" />
+        android:layout_alignParentBottom="true"
+        android:orientation="vertical">
 
-    <SeekBar
-        android:id="@+id/seekBar"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_gravity="bottom"
-        android:layout_marginBottom="100dp"
-        android:padding="32dp"
-        android:progress="60"
-        android:visibility="visible" />
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:paddingLeft="20dp"
+            android:text="@string/changeDirection"
+            android:textColor="@color/colorPrimary"
+            android:textStyle="bold"/>
 
-</FrameLayout>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <Switch
+                android:id="@+id/switch_changeDirection"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textOff="@string/progressTitleRTL"
+                android:textOn="@string/progressTitleLTR"/>
+
+            <TextView
+                android:id="@+id/tv_changeDirectionSwitchLabel"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:text="@string/progressTitleRTL">
+
+            </TextView>
+        </LinearLayout>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:paddingLeft="20dp"
+            android:text="@string/changeFont"
+            android:textColor="@color/colorPrimary"
+            android:textStyle="bold"/>
+
+        <RadioGroup
+            android:id="@+id/font_group"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <RadioButton
+                android:id="@+id/font_april"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:checked="true"
+                android:text="@string/font_april_flowers"/>
+
+            <RadioButton
+                android:id="@+id/font_winter_calligraphy"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/font_winter_calligraphy"/>
+
+            <RadioButton
+                android:id="@+id/earth_2073"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/font_earth_2073"/>
+        </RadioGroup>
+
+        <Button
+            android:id="@+id/btn_animate"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/animate"/>
+
+        <Button
+            android:id="@+id/btn_changeBgColor"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/changeBgColor"/>
+
+        <Button
+            android:id="@+id/btn_changeStrokeColor"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/changeStrokeColor"/>
+
+        <Button
+            android:id="@+id/btn_changeProgressColor"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/changeProgressColor"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:paddingLeft="20dp"
+            android:text="@string/changeProgress"
+            android:textColor="@color/colorPrimary"
+            android:textStyle="bold"/>
+
+        <SeekBar
+            android:id="@+id/seekBar"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="bottom"
+            android:padding="32dp"
+            android:progress="50"
+            />
+    </LinearLayout>
+
+
+</RelativeLayout>

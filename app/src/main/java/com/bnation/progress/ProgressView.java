@@ -6,12 +6,17 @@ import android.support.annotation.Nullable;
 import android.util.AttributeSet;
 
 /**
- * Works with any background. No anti-aliasing for this approach.
  * <p>
- * Heavily inspired from Romain Guy's Medium article on "How to underline text":
- * https://medium.com/google-developers/a-better-underline-for-android-90ba3a2e4fb#.hnv0zcm2h
+ * Thanks to :
+ * (Rakshak R.Hegde) "https://github.com/rakshakhegde"
+ * </p>
+ *
  * <p>
- * Created by rakshakhegde on 16/02/17.
+ * Heavily inspired by :
+ * https://github.com/rakshakhegde/Diffre
+ * <p>
+ *
+ * Created by ahmed.bah7ini on Mar 15, 2017.
  */
 public class ProgressView extends BaseProgressView {
 

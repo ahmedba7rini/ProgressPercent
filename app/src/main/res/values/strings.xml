@@ -2,12 +2,20 @@
     <string name="app_name">ProgressPercent</string>
     <string name="progressTitleRTL">RTL Progress</string>
     <string name="progressTitleLTR">LTR Progress</string>
+    <string name="animate">Animate</string>
+    <string name="changeBgColor">Change BG Color</string>
+    <string name="changeStrokeColor">Change Stroke Color</string>
+    <string name="changeProgressColor">Change Progress Color</string>
+    <string name="changeDirection">Change Direction</string>
+    <string name="changeFont">Change Font</string>
+    <string name="changeRadius">Change Radius</string>
+    <string name="changeProgress">Change Progress</string>
 
     <!--available fonts in assets-->
     <!--to use more font you had to add them into assets folder, then just write the name of the font to app:textFont-->
-    <string name="april_flowers">april_flowers.ttf</string>
-    <string name="hantu_kom_kom">hantu_kom_kom.ttf</string>
-    <string name="sorry_sorry">sorry_sorry.ttf</string>
+    <string name="font_april_flowers">april_flowers.ttf</string>
+    <string name="font_winter_calligraphy">winter_calligraphy.ttf</string>
+    <string name="font_earth_2073">earth_2073.ttf</string>
 
     <!--Note: fonts are downloaded from http://www.1001freefonts.com -->
 

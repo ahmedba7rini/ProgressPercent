@@ -5,6 +5,9 @@ import android.view.animation.Animation;
 import android.view.animation.Transformation;
 import android.widget.ProgressBar;
 
+/**
+ * Created by ahmed.bah7ini on Mar 15, 2017.
+ */
 
 public class ProgressBarAnimation extends Animation {
 
