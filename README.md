@@ -5,5 +5,6 @@ Android Custom progress, with progress written inside.
 <img alt="demo gif" src="preview/progress_percent.png" width=300 />
 </p>
 
-`Thanks to :
-(Rakshak R.Hegde) https://github.com/rakshakhegde/Diffre`
+`Thanks to :`
+[Rakshak R.Hegde](https://github.com/rakshakhegde/Diffre "Rakshak R.Hegde's Differ Project")
+
