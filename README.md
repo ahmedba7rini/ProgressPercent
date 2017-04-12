@@ -1,4 +1,6 @@
 # ProgressPercent
 Android Custom progress, with progress written inside.
 
-![alt tag](https://github.com/ahmedba7rini/ProgressPercent/blob/master/preview/progress_percent.png)
+<p align="center">
+<img alt="demo gif" src="preview/progress_percent.png" width=300 />
+</p>
