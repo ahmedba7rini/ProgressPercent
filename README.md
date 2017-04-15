@@ -5,14 +5,18 @@ Android Custom progress, with progress written inside.
 <img alt="demo gif" src="preview/progress_percent.png" width=300 />
 </p>
 
+- Can change direction (LTR, RTL):
+
 <p align="center">
 <img alt="demo gif" src="preview/progress_preview.gif" width=300 />
 </p>
 
+- Change Font of progress text.
 <p align="center">
 <img alt="demo gif" src="preview/progress_preview2.gif" width=300 />
 </p>
 
+- Can change color of (progress, background, stroke).
 <p align="center">
 <img alt="demo gif" src="preview/progress_preview3.gif" width=300 />
 </p>
