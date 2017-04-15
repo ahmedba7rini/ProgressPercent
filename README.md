@@ -5,27 +5,50 @@ Android Custom progress, with progress written inside.
 <img alt="demo gif" src="preview/progress_percent.png" width=300 />
 </p>
 
-- Can change direction (LTR, RTL):
-from XML: use 
+Can change direction (LTR, RTL):
+- From XML: use 
 ```xml
-app:direction="rtl"
+            app:direction="rtl"
 ```
-from code: use
+- From code: use
 ```java
-mProgressView.setProgressDirection(View.LAYOUT_DIRECTION_LTR);
-mProgressView.setProgressDirection(View.LAYOUT_DIRECTION_RTL);
+				mProgressView.setProgressDirection(View.LAYOUT_DIRECTION_LTR);
+				mProgressView.setProgressDirection(View.LAYOUT_DIRECTION_RTL);
 ```
 
 <p align="center">
 <img alt="demo gif" src="preview/progress_preview.gif" width=300 />
 </p>
 
-- Change Font of progress text.
+To change Font of progress text.
+- From XML: use 
+```xml
+            app:textFont="font_winter_calligraphy.ttf"
+```
+- From code: use
+```java
+				// Font should be added to assets folder before doing this
+				mProgressView.setProgressFont("font_winter_calligraphy.ttf");
+```
+
 <p align="center">
 <img alt="demo gif" src="preview/progress_preview2.gif" width=300 />
 </p>
 
-- Can change color of (progress, background, stroke).
+To change color of (progress, background, stroke).
+- From XML: use 
+```xml
+            app:backgroundColor="@color/colorGray"
+            app:progressColor="@color/result_red"
+            app:strokeColor="@color/result_blue"
+```
+- From code: use
+```java
+				mProgressView.setProgressBackgroundColor(UIUtils.getRandomColor());
+				mProgressView.setProgressColor(UIUtils.getRandomColor());
+				mProgressView.setProgressStrokeColor(UIUtils.getRandomColor());
+```
+
 <p align="center">
 <img alt="demo gif" src="preview/progress_preview3.gif" width=300 />
 </p>
