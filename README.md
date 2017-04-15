@@ -5,7 +5,7 @@ Android Custom progress, with progress written inside.
 <img alt="demo gif" src="preview/progress_percent.png" width=300 />
 </p>
 
-Can change direction (LTR, RTL):
+<h5>Can change direction (LTR, RTL):<h5/>
 - From XML: use 
 ```xml
 app:direction="rtl"
@@ -20,7 +20,7 @@ mProgressView.setProgressDirection(View.LAYOUT_DIRECTION_RTL);
 <img alt="demo gif" src="preview/progress_preview.gif" width=300 />
 </p>
 
-To change Font of progress text.
+<h5>To change Font of progress text.<h5/>
 - From XML: use 
 ```xml
 app:textFont="font_winter_calligraphy.ttf"
@@ -35,7 +35,7 @@ mProgressView.setProgressFont("font_winter_calligraphy.ttf");
 <img alt="demo gif" src="preview/progress_preview2.gif" width=300 />
 </p>
 
-To change color of (progress, background, stroke).
+<h5>To change color of (progress, background, stroke).</h5>
 - From XML: use
 
 ```xml
@@ -56,7 +56,7 @@ mProgressView.setProgressStrokeColor(getResources().getColor(R.color.colorGray))
 <img alt="demo gif" src="preview/progress_preview3.gif" width=300 />
 </p>
 
-<h1>Other Parameters:</h1>
+<h5>Other Parameters:</h5>
 - set max
 
 ```xml
