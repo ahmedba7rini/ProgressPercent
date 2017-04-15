@@ -6,6 +6,15 @@ Android Custom progress, with progress written inside.
 </p>
 
 - Can change direction (LTR, RTL):
+from XML: use 
+```xml
+app:direction="rtl"
+```
+from code: use
+```java
+mProgressView.setProgressDirection(View.LAYOUT_DIRECTION_LTR);
+mProgressView.setProgressDirection(View.LAYOUT_DIRECTION_RTL);
+```
 
 <p align="center">
 <img alt="demo gif" src="preview/progress_preview.gif" width=300 />
