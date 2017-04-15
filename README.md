@@ -36,13 +36,16 @@ mProgressView.setProgressFont("font_winter_calligraphy.ttf");
 </p>
 
 To change color of (progress, background, stroke).
-- From XML: use 
+- From XML: use
+
 ```xml
 app:backgroundColor="@color/colorGray"
 app:progressColor="@color/result_red"
 app:strokeColor="@color/result_blue"
 ```
+
 - From code: use
+
 ```java
 mProgressView.setProgressBackgroundColor(getResources().getColor(R.color.colorGray));
 mProgressView.setProgressColor(getResources().getColor(R.color.colorGray));
@@ -55,23 +58,31 @@ mProgressView.setProgressStrokeColor(getResources().getColor(R.color.colorGray))
 
 <h1>Other Parameters:</h1>
 - set max
+
 ```xml
 app:max="100"
 ```
+
 ```java
 setProgressMax(float progressMax)
 ```
+
 - set progress
+
 ```xml
 app:progress="50"
 ```
+
 ```java
 setProgress(final float _progress)
 ```
+
 - set radius "corners"
+
 ```xml
 app:radius="10dp"
 ```
+
 - set progress text size
 ```xml
 app:textSize="30sp"
