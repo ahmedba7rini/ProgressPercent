@@ -6,10 +6,12 @@ Android Custom progress, with progress written inside.
 </p>
 
 <h5>Can change direction (LTR, RTL):<h5/>
+
 - From XML: use 
 ```xml
 app:direction="rtl"
 ```
+
 - From code: use
 ```java
 mProgressView.setProgressDirection(View.LAYOUT_DIRECTION_LTR);
@@ -21,10 +23,12 @@ mProgressView.setProgressDirection(View.LAYOUT_DIRECTION_RTL);
 </p>
 
 <h5>To change Font of progress text.<h5/>
+
 - From XML: use 
 ```xml
 app:textFont="font_winter_calligraphy.ttf"
 ```
+
 - From code: use
 ```java
 // Font should be added to assets folder before doing this
@@ -36,6 +40,7 @@ mProgressView.setProgressFont("font_winter_calligraphy.ttf");
 </p>
 
 <h5>To change color of (progress, background, stroke).</h5>
+
 - From XML: use
 
 ```xml
