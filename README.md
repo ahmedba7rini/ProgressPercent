@@ -53,5 +53,29 @@ mProgressView.setProgressStrokeColor(getResources().getColor(R.color.colorGray))
 <img alt="demo gif" src="preview/progress_preview3.gif" width=300 />
 </p>
 
+<h1>Other Parameters:</h1>
+- set max
+```xml
+app:max="100"
+```
+```java
+setProgressMax(float progressMax)
+```
+- set progress
+```xml
+app:progress="50"
+```
+```java
+setProgress(final float _progress)
+```
+- set radius "corners"
+```xml
+app:radius="10dp"
+```
+- set progress text size
+```xml
+app:textSize="30sp"
+```
+
 `Inspired by:`
 [Rakshak R.Hegde](https://github.com/rakshakhegde/Diffre "Rakshak R.Hegde's Differ Project")
