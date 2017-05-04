@@ -60,7 +60,7 @@ public abstract class BaseProgressView extends View {
 	private float radius;
 	private float mPercent = 0.1F;
 	private float mProgress;
-	private int textPadding;
+	private int textHorizontalPadding;
 	protected Path progressStrokePath = new Path();
 	private Rect textBounds = new Rect();
 
@@ -100,7 +100,7 @@ public abstract class BaseProgressView extends View {
 					/*do nothing, just ignore font*/
 			}
 
-			textPadding = ta.getDimensionPixelSize(R.styleable.ProgressView_textPadding, dpToPx(10));
+			textHorizontalPadding = ta.getDimensionPixelSize(R.styleable.ProgressView_textHorizontalPadding, dpToPx(10));
 
 			radius = ta.getDimensionPixelSize(R.styleable.ProgressView_radius, dpToPx(10));
 
@@ -135,11 +135,8 @@ public abstract class BaseProgressView extends View {
 		textWidth = textBounds.width();
 		textHeight = textBounds.height();
 
-		width = textWidth + textPadding;
-		height = textHeight + textPadding;
-
-		int cxLTR = getProgressPos() - (textWidth/2 +textPadding); // LTR
-		int cy = (height + textHeight) / 2;
+		width = textWidth;
+		height = textHeight + textHorizontalPadding;
 
 		//Measure Width : this to use size enter in layout_width if (wrap content or match parent)
 		int widthMode = MeasureSpec.getMode(widthMeasureSpec);
@@ -154,13 +151,6 @@ public abstract class BaseProgressView extends View {
 		// end of Measure Width
 
 		initProgressPaint(mProgress);
-
-		if(mProgressDirection == LAYOUT_DIRECTION_LTR){
-			paint.getTextPath(textString, 0, textString.length(), cxLTR, cy, textPath);
-		} else {
-			int cxRTL = width - getProgressPos() + (textWidth/2 +textPadding); // RTL
-			paint.getTextPath(textString, 0, textString.length(), cxRTL, cy, textPathRTL);
-		}
 
 		progressStrokePath = getRoundRectPath(0, 0, width, height, radius);
 
@@ -182,21 +172,21 @@ public abstract class BaseProgressView extends View {
 
 		if(mProgressDirection == LAYOUT_DIRECTION_LTR){
 			// CX: LTR Text coordinates calculation
-			int minProgressLTR = textWidth + textPadding;
+			int minProgressLTR = 2* textWidth;
 			if(getProgressPos() > minProgressLTR) // stop moving progress LTR
 			{
-				cx = (getProgressPos() - (textWidth/2 + textPadding));
+				cx = (getProgressPos() - textWidth);
 			} else {
-				cx = (textWidth/2 + textPadding);
+				cx = (textWidth);
 			}
 			paint.getTextPath(textString, 0, textString.length(), cx, (height + textHeight) / 2, textPath);
 		} else {
 			// CX: RTL Text coordinates calculation
-			int minProgressRTL = width - (textWidth + textPadding) /2; // RTL
-			if((width - getProgressPos() +(textWidth/2 + textPadding)) < minProgressRTL){ // RTL
-				cx = (width - getProgressPos()) + (textWidth/2 + textPadding);
+			int minProgressRTL = width - (textWidth); // RTL
+			if((width - getProgressPos() + textWidth) < minProgressRTL){ // RTL
+				cx = (width - getProgressPos() + textWidth);
 			} else {
-				cx = width - (textWidth/2 + textPadding) ;
+				cx = width - (textWidth) ;
 			}
 			paint.getTextPath(textString, 0, textString.length(), cx, (height + textHeight) / 2, textPathRTL); // RTL
 		}

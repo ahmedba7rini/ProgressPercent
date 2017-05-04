@@ -38,8 +38,8 @@
             app:radius="10dp"
             app:strokeColor="@color/result_blue"
             app:textFont="@string/font_april_flowers"
-            app:textPadding="10dp"
-            app:textSize="30sp"/>
+            app:textHorizontalPadding="10dp"
+            app:textSize="15sp"/>
     </LinearLayout>
 
     <LinearLayout
